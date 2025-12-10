@@ -1,6 +1,17 @@
   @import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
   @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  flex: 1;
+}
+
+  
  body {
   font-family: 'Alata', Arial, Helvetica, sans-serif;
   font-weight: 400;
@@ -11,6 +22,12 @@
 h1, h2, h3 {
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 300;
+}
+
+h3 {
+    font-size: 25px;
+    text-transform: uppercase;
+    font-weight: 300;
 }
 
 header {
@@ -30,19 +47,36 @@ header {
 height: auto;
 }
 
+button {
+  padding: 8px;
+  font-family: 'Alata', Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-weight: 400;
+  border: 2px solid black;
+  border-radius: 2px;
+  width: 15%;
+  cursor: pointer;
+  background-color: white;
+}
+
+button:hover {
+  background-color: black;
+  color: white;
+}
 
 #header-title {
     font-size: 55px;
     text-transform: uppercase;
     border: 1px white solid;
-    max-width: 400px;
+    max-width: 550px;
     width: 100%;
     margin: 100px;
-    padding: 25px;
+    padding: 20px;
     color: white;
 }
 
-#highlight-title {
+.highlight-title {
     font-size: 45px;
     text-transform: uppercase;
 }
@@ -61,8 +95,19 @@ nav {
 }   
 
 a {
-text-decoration: none;
-color: white;
+ text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 8px;
+  text-decoration-thickness: 2px;
+  color: white;
+
+  transition: text-decoration-color 0.3s ease;
+}
+
+a:hover {
+  text-decoration: underline;
+  text-underline-offset: 8px;
+  text-decoration-thickness: 2px;
 }
 
 p {
@@ -72,30 +117,189 @@ p {
 }
   
     .highlight {
-        max-width: 500px;
-        display: grid;
+    max-width: 950px;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 100px;
+  position: relative;
+  margin-bottom: 200px;
+    }
+
+    .highlight-content {
+       display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2, 1fr);
          position: relative; 
           gap: 0;
-          margin: 0 auto;
-            margin-top: 150px;
-            margin-right: 45%;
-            justify-content: center;
     }
 
-    #highlight-image {grid-area: 1 / 1 / 3 / 2;}
+    #highlight-image {grid-area: 1 / 1 / 3 / 2;
+           width: 600px;
+        height: auto;}
     #highlight-info {
-                    width: 455px;
-                      max-width: 80%; 
-                    grid-area: 2 / 1 / 3 / 2;
-                      background: white;
-                      padding: 50px;
-                     margin-left: 80%;    
-                     margin-right: 0;  
-                     margin-top: -50px;    
-                     z-index: 2;   
-                    }
+  width: 500px;
+  max-width: 80%;
+  background: white;
+  padding: 50px;
+  position: absolute;  
+  top: 50%;            
+  right: 0;           
+  z-index: 2;
+}
 
-  .attribution { font-size: 11px; text-align: center; }
+
+.creations {
+  max-width: 950px;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 100px;
+}
+
+.creations-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+   align-items: center;
+   margin-bottom: 40px;
+}
+
+.creations-examples {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 20px;
+}
+
+
+.grid-item {
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+  color: white;
+    display: flex;
+    flex-direction: column;
+  justify-content: flex-end;
+    transition: color 0.3s ease;
+    transition: box-shadow 0.3s ease;
+
+}
+
+.grid-item:hover {
+  cursor: pointer;
+  color: black;
+    box-shadow: inset 0 0 0 2000px rgba(255, 255, 255, 0.7);
+}
+
+.grid-item h3 {
+  max-width: 200px;
+  padding: 30px;
+  margin: 0;
+}
+
+.grid-item:nth-child(1) {
+  grid-area: 1 / 1 / 2 / 2; 
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('images/desktop/image-deep-earth.jpg')}
+.grid-item:nth-child(2) {
+  grid-area: 1 / 2 / 2 / 3;
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('images/desktop/image-night-arcade.jpg');
+}
+.grid-item:nth-child(3) {
+  grid-area: 1 / 3 / 2 / 4;
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('images/desktop/image-soccer-team.jpg');
+}
+.grid-item:nth-child(4) {
+  grid-area: 1 / 4 / 2 / 5;
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('images/desktop/image-grid.jpg');
+}
+.grid-item:nth-child(5) {
+  grid-area: 2 / 1 / 3 / 2;
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('images/desktop/image-from-above.jpg');
+}
+.grid-item:nth-child(6) {
+  grid-area: 2 / 2 / 3 / 3;
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('images/desktop/image-pocket-borealis.jpg');
+}
+.grid-item:nth-child(7) {
+  grid-area: 2 / 3 / 3 / 4;
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('images/desktop/image-curiosity.jpg');
+}
+.grid-item:nth-child(8) {
+  grid-area: 2 / 4 / 3 / 5;
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('images/desktop/image-fisheye.jpg');
+}
+
+footer {
+  display: flex;                  
+  flex-direction: column;
+  justify-content: space-between; 
+  align-items: flex-start;       
+  padding: 5px 40px ;
+  background-color: #000;
+  color: #fff;
+  width: 100%;
+  flex-wrap: nowrap;    
+  align-items: center;
+  margin-top: 100px;
+}        
+
+.footer-main {
+  display: flex;
+  justify-content: space-between; 
+  width: 100%;
+  flex-wrap: wrap;
+  
+}
+
+.footer-left,
+.footer-right {
+  display: flex;
+   flex: 1; 
+  flex-direction: column;
+  min-width: 250px;
+}
+
+.footer-right {
+  align-items: end;
+}
+
+#footer-nav {
+  font-size: 10px;
+}
+
+#footer-logo {
+  height: auto;
+  width: 150px;
+  padding: 20px 0;
+}
+
+.icons {
+  flex-direction: row;
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+.icon {
+  width: 20px;
+  height: auto;
+} 
+
+.icon-link {
+  display: inline-block;
+  padding-bottom: 2px;
+
+  border-bottom: 2px solid transparent;
+
+  transition: border-color 0.3s ease; 
+}
+
+.icon-link:hover {
+     border-bottom-color: white;
+  }
+
+  #copyright {
+    margin: 0;
+  }
+
+  .attribution { font-size: 11px; text-align: center; margin: 0 auto;}
     .attribution a { color: hsl(228, 45%, 44%); }
