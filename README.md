@@ -4,6 +4,9 @@
 
 ## Welcome! 👋
 
+Completed project: https://jonaszdecember7-lab.github.io/loopstudios-landing-page-main/
+
+
 Thanks for checking out this front-end coding challenge.
 
 [Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
