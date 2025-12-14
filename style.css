@@ -1,6 +1,8 @@
   @import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
   @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 
+
+
   * {
     box-sizing: border-box;
     margin: 0;
@@ -18,7 +20,7 @@
 
   body {
     font-family: 'Alata', Arial, Helvetica, sans-serif;
-    font-weight: 400;
+    font-weight:  00;
     margin: 0;
   }
 
@@ -328,12 +330,59 @@
     color: hsl(228, 45%, 44%);
   }
 
-  .menu {
+  .menu-icon {
     display: none;
   }
 
+  /*---------- Mobile-only menu -------*/
+  menu {
+    display: flex;
+    position: sticky;
+     height: 100vh;
+        width: 100vw;
+        background-color: black;
+        flex-direction: column;
+  }
+
+    #menu-logo {
+      width: 150px;
+            height: auto;
+
+    }
+
+    body.menu-open {
+  overflow: hidden;
+  }
+
+  
+  #menu-nav {
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+    text-transform: uppercase;
+    align-items: start;
+    padding: 20px;
+    margin-top: 50%;
+    gap: 25px;
+  }
+
+    #menu-nav a {
+     font-family: 'Josefin Sans', sans-serif;
+      font-weight: 300;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .mobile-menu[hidden] {
+  display: none;
+}
+
+
   /*-------------------------------Query--------------------------------------*/
   @media (max-width: 750px) {
+
    header nav {
       display: none;
     }
@@ -360,7 +409,7 @@
       width: 150px;
     }
 
-    .menu {
+    .menu-icon {
       display: flex;
       height: 20px;
       width: auto;
@@ -562,3 +611,4 @@
     display: none;
   }
   }
+
